@@ -18,9 +18,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        
+        'first_name',
+        'last_name',
+        'company',
+        'bio',
+        'profile_picture',
         'email',
         'password',
+       
     ];
 
     /**
@@ -50,5 +56,10 @@ class User extends Authenticatable
     public function companies()
     {
         return $this->hasMany(Company::class);
+    }
+
+    public function fullName()
+    {
+        return $this->first_name . "" . $this->last_name;
     }
 }

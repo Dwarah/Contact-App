@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 Use App\Http\Controllers\CompanyController;
+Use App\Http\Controllers\Settings\AccountController;
+Use App\Http\Controllers\Settings\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,22 @@ Route::resources([
     '/companies'=>CompanyController::class
 ]);
 
-Auth::routes();
+Auth::routes(['veryfy' => true]);
+
+//Auth::routes();
 
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/settings/profile', [ProfileController::class, 'edit'])->name('settings.profile.edit');
+
+Route::put('/settings/profile', [ProfileController::class, 'update'])->name('settings.profile.update');
+
+//Route::get('/dashboard','HomeController@index')->name('home');
+
+//Route::get('/settings/account','Settings\AccountController@index');
+
+//Route::get('/settings/profile','Settings\ProfileController@edit')->name('settings.profile.edit');
+
+//Route::put('/settings/profile','Settings\ProfileController@update')->name('settings.profile.update');;
+
+
