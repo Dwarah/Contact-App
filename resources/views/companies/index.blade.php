@@ -22,9 +22,8 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Website</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Address</th>
                     <th scope="col">Contacts</th>
                     <th scope="col">Actions</th>
                   </tr>
@@ -38,7 +37,6 @@
                     <td>{{$company->name}}</td>
                     <td>{{$company->email}}</td>
                     <td>{{$company->address}}</td>
-                    <td>{{$company->Website}}</td>
                     <td>{{$company->contacts->count()}}</td>
                     <td width="150">
                       <a href="{{route('companies.show', $company->id)}}" class="btn btn-sm btn-circle btn-outline-info" title="Show"><i class="fa fa-eye"></i></a>
@@ -59,3 +57,6 @@
     </div>
   </main>
   @endsection
+
+
+  

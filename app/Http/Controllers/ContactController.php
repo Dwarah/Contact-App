@@ -27,7 +27,7 @@ class ContactController extends Controller
         $user = auth()->user();
         $companies = $user->companies()->orderBy('name')->pluck('name','id')->prepend('All Companies', '');
         //\DB::enableQueryLog();
-        $contacts = $user->contacts()->latestFirst()->paginate(10);
+        $contacts = $user->contacts()->latestFirst()->paginate(5);
         //dd(\DB::getQueryLog());
         return view('contacts.index', compact('contacts','companies'));
     }
@@ -75,7 +75,7 @@ class ContactController extends Controller
         ]);
         //dd($request->all());
         //Contact::create($request->all());
-        //$contact = Contact::findOrFail($id);
+        $contact = Contact::findOrFail($id);
         $contact -> update($request->all());
         return redirect()->route('contacts.index')->with('message','Contact has been updated successfully');
     }

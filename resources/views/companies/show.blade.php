@@ -20,9 +20,9 @@
                   </div>
 
                   <div class="form-group row">
-                    <label for="last_name" class="col-md-3 col-form-label">Address</label>
+                    <label for="last_name" class="col-md-3 col-form-label">Adress</label>
                     <div class="col-md-9">
-                      <p class="form-control-plaintext text-muted">{{$company->address}}</p>
+                      <p class="form-control-plaintext text-muted">{{$company->adress}}</p>
                     </div>
                   </div>
                   <div class="form-group row">
